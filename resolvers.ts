@@ -45,6 +45,19 @@ export const resolvers = {
               deleted: false
             });
             return record;
+        },
+        deleteArticle: async (_, args) => {
+            const { id } = args;
+      
+            await Article.updateOne({
+              _id: id,
+              deleted: false
+            }, {
+              deleted: true,
+              deletedAt: new Date()
+            });
+      
+            return "Đã xóa!";
         }
     }
 
