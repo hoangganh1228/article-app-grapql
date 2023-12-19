@@ -15,7 +15,7 @@ export const typeDefsUser = gql`
     password: String
   }
   type Query {
-    getUser(id: ID): User
+    getUser: User
   }
   input LoginUserInput {
     email: String,
